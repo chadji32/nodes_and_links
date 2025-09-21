@@ -1,0 +1,24 @@
+<div class="app-container">
+    <!-- Top Blue Bar -->
+    <header class="top-bar">
+      <img src="assets/nodeslinks_logo.png" alt="Logo" class="logo" />
+    </header>
+  
+    <div class="main-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="icon-wrapper" routerLink="/">
+          <i class="fas fa-home"></i>
+        </div>
+        <div class="icon-wrapper" routerLink="/charts">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+      </aside>
+  
+      <!-- Content Area -->
+      <main class="content">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  </div>
+  

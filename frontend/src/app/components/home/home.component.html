@@ -1,0 +1,82 @@
+<div class="dashboard">
+    <div class="cards">
+  
+      <!-- Static KPI card -->
+      <section class="card">
+        <header class="card-header">
+          <span class="icon" aria-hidden="true">🩺</span>
+          <h3>Schedule Health</h3>
+        </header>
+        <div class="card-body center">
+          <div class="big-number">22<span class="muted">/46</span></div>
+          <p class="muted">Health checks within thresholds</p>
+        </div>
+      </section>
+  
+      <!-- Interactive card → navigates to /charts -->
+      <a class="card clickable" routerLink="/charts" aria-label="Open graphs">
+        <header class="card-header">
+          <span class="icon" aria-hidden="true">📈</span>
+          <h3>Trends &amp; Graphs</h3>
+        </header>
+  
+        <!-- Render ECharts only in the browser to avoid SSR "window" error -->
+        <div *ngIf="isBrowser; sparkPlaceholder"
+             echarts
+             [options]="sparkOptions"
+             class="spark">
+        </div>
+        <ng-template #sparkPlaceholder>
+          <div class="sparkline-placeholder">Mini preview</div>
+        </ng-template>
+  
+        <p class="muted">Click to explore timelines, matrix, and network.</p>
+      </a>
+  
+      <!-- Static Change Control card -->
+      <section class="card">
+        <header class="card-header">
+          <span class="icon" aria-hidden="true">📝</span>
+          <h3>Change Control</h3>
+        </header>
+        <ul class="list">
+          <li><span class="line"></span><span class="tag removed">Removed</span></li>
+          <li><span class="line"></span><span class="tag added">Added</span></li>
+          <li><span class="line"></span><span class="tag modified">Modified</span></li>
+        </ul>
+      </section>
+  
+      <!-- Static AI Report card -->
+      <section class="card">
+        <header class="card-header">
+          <span class="icon" aria-hidden="true">📄</span>
+          <h3>AI Report</h3>
+        </header>
+        <div class="grid2">
+          <button class="pill">AI Templates</button>
+          <button class="pill outline">Custom Reports</button>
+        </div>
+        <p class="muted">Generate or tailor reports to your needs.</p>
+      </section>
+  
+      <!-- Static QSRA card -->
+      <section class="card">
+        <header class="card-header">
+          <span class="icon" aria-hidden="true">📊</span>
+          <h3>AI QSRA</h3>
+        </header>
+        <div class="sparkline-placeholder">QSRA mini-chart</div>
+      </section>
+  
+      <!-- Static AI Agent card -->
+      <section class="card">
+        <header class="card-header">
+          <span class="icon" aria-hidden="true">🤖</span>
+          <h3>AI Agent</h3>
+        </header>
+        <p class="muted">Ask questions about your data.</p>
+      </section>
+  
+    </div>
+  </div>
+  

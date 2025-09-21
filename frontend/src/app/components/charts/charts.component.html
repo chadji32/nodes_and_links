@@ -1,0 +1,35 @@
+<!-- src/app/components/charts/charts.component.html -->
+<div class="charts">
+  <div class="charts-grid">
+
+    <div class="chart-box">
+      @if (isBrowser) {
+        <div echarts [options]="activityXTimeOptions" class="echart" [autoResize]="true"></div>
+      } @else {
+        <div class="echart"></div>
+      }
+    </div>
+
+    <div class="chart-box">
+      @if (isBrowser) {
+        <div echarts [options]="adjacencyHeatmapOptions" class="echart" [autoResize]="true"></div>
+      } @else {
+        <div class="echart"></div>
+      }
+    </div>
+
+    <div class="chart-box">
+      @if (isBrowser) {
+        <div
+          echarts
+          [options]="combinedOverlayOptions"
+          class="echart"
+          [autoResize]="true">
+        </div>
+      } @else {
+        <div class="echart"></div>
+      }
+    </div>
+
+  </div>
+</div>
